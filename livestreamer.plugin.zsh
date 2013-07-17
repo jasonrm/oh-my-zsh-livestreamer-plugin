@@ -1,6 +1,3 @@
-# Sublime Text 2 Aliases
-#unamestr = 'uname'
-
 twitch(){
     local o_player=$1
     local o_stream=$2
