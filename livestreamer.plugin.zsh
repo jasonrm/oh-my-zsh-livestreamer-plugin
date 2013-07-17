@@ -24,7 +24,7 @@ twitch(){
 
     local player=""
     if [ "${o_player}" = "mplayer" ]; then
-        player="/usr/local/bin/mplayer -af comp -cache 2048 -cache-min 50 -title ${o_stream} ${mplayer_scale} ${mplayer_channels}"
+        player="/usr/local/bin/mplayer -framedrop -af comp -cache 2048 -cache-min 50 -title ${o_stream} ${mplayer_scale} ${mplayer_channels}"
     elif [ "${o_player}" = "mpv" ]; then
         player="/usr/local/bin/mpv --quiet --vo=opengl-hq --framedrop=yes --hwdec=vda --cache=2048 --cache-min=50 --title=${o_stream} ${mpv_scale} ${mpv_channels}"
     fi
