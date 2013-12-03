@@ -10,9 +10,10 @@ twitch(){
     local scale=""
     if [ "${o_original_resolution}" != "${o_resize_resolution}p" ]; then
         mplayer_scale="-sws 9 -vf scale=-3:${o_resize_resolution}"
-        mpv_scale=""
+        mpv_scale="-${mplayer_scale}"
     else
-        scale=""
+        mplayer_scale=""
+        mpv_scale=""
     fi
 
     local channels=""
