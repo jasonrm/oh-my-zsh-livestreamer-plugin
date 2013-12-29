@@ -32,7 +32,7 @@ twitch(){
     if [ "${o_player}" = "mplayer" ]; then
         player="/usr/local/bin/mplayer -framedrop -af comp -cache 2048 -cache-min 50 -title ${o_stream} ${mplayer_scale} ${mplayer_channels}"
     elif [ "${o_player}" = "mpv" ]; then
-        player="/usr/local/bin/mpv --vo=corevideo --framedrop=yes --hwdec=vda --cache=2048 --cache-min=50 --title=${o_stream} ${mpv_scale} ${mpv_channels} ${screenshot_folder}"
+        player="/usr/local/bin/mpv --cache=2048 --cache-min=50 --title=${o_stream} ${mpv_scale} ${mpv_channels} ${screenshot_folder}"
     fi
 
     /usr/local/bin/livestreamer -v --player "$player" "twitch.tv/${o_stream}" $o_original_resolution
