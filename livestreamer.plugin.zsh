@@ -7,8 +7,8 @@ twitch(){
     local screenshot_folder="--screenshot-format=png --screenshot-template=\"${HOME}/${o_stream} - %tY-%tm-%td at %tH.%tM.%tS\""
 
     local scale=""
-    if [ "${o_original_resolution}" != "${o_resize_resolution}p" ]; then
-        scale="--sws 9 -vf scale=-3:${o_resize_resolution}"
+    if [ -n "${o_resize_resolution}" ]; then
+        scale="-vf scale=-3:${o_resize_resolution}"
     fi
 
     local channels=""
